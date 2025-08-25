@@ -1,0 +1,1 @@
+read from program and written on the file
