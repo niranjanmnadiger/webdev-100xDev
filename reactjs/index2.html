@@ -1,16 +1,37 @@
 <html>
-<body>
-    <button onclick="btnClick()" id="btn" >counter 0</button>
-</body>
-<script>
-    function btnClick(){
-            const btnValue = document.getElementById('btn').innerHTML;
-            console.log(btnValue.split(" "))
-            const btncounter = btnValue.split(" ")[1];
-            const newCounter = parseInt(btncounter)+1;
-            document.getElementById("btn").innerHTML= "counter " + newCounter;
+    <body>
+        <div id = "btn">
 
-    }
-    
-</script>
+        </div>
+    </body>
+
+    <script>
+         let state = {
+            count : 0
+            color : Black
+         }
+         
+        function onButtonPress(){
+            state.count++;
+            state.color = "red";
+            buttonRender();
+        }
+
+        function buttonRender(){
+            document.getElementById("btn").innerHTML= ""; //remove the current element from the DOM
+            const comp = buttonComponent(state.count); //button component is called and created 
+            document.getElementById("btn").appendChild(comp); // button comp is appended to parent element - parent element
+        }
+
+        function buttonComponent(count){ //this takes count as an arguenment which is used in button comp innerHTML
+            const button = document.createElement("button");
+            button.innerHTML = "counter " + count;
+            button.setAttribute("onclick", `onButtonPress()`);
+            return button
+        }
+        buttonRender();
+
+
+    </script>
+
 </html>
