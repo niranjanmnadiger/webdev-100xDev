@@ -1,5 +1,6 @@
 // counter using props
 
+//remember to change it to app2 in main.jsx before run
 import React from "react";
 
 function App(){

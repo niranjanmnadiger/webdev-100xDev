@@ -1,5 +1,7 @@
 //without using props
 
+//remember to change it to app3x in main.jsx before run
+
 import React, { useState } from 'react'
 import './App.css'
 
