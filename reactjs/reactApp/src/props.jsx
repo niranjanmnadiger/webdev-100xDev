@@ -51,7 +51,7 @@ const postStyle = {
     width: 500,
     backgroundColor: "white",
     padding: 10,
-    margin: 1,
+    margin: 10,
     borderColor: "grey",
     borderRadius: 5
 

@@ -1,3 +1,5 @@
+//after component.jsx - same code is written again with props so props.jsx
+
 function App(){
 
     // if you can see this function renders other two fucntions listed below <ProfileCard /> and <PostComponent />
@@ -95,3 +97,4 @@ function ProfileCard(){
  
 
 export default App
+
