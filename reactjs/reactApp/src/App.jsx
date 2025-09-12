@@ -1,41 +1,46 @@
-import React , { useState } from  "react";
-import { PostComponent } from "./post";
+import React , { useEffect, useState } from  "react";
+
 
 function App() {
-    const [posts,setPosts] = useState([]);
+    const [showTimer, setShowTimer] = useState(true);
 
-  const postComponent= posts.map((post => <PostComponent  
-   name={post.name}
-   subtitle={post.subtitle}
-   time={post.time}
-   image={post.image}
-   description={post.description}
-   image2={post.image2}
-  /> ));
-  
+    useEffect(()=>{
+        setInterval(() => {
+            setShowTimer(showTimer => !showTimer);
+        }, 5000);
+    },[])
+    
+    return(
+        <div>
+            {showTimer? <Timer /> : null}
+        </div>
+    )
+    
 
- function addPost(){
-     setPosts([...posts,{
-        name: "niranjan",
-        subtitle: "20 followers",
-        time: "26 mins ago",
-        image: "https://archive.smashing.media/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/68dd54ca-60cf-4ef7-898b-26d7cbe48ec7/10-dithering-opt.jpg",
-        description: "hello from nirus 2",
-        image2: 
-        "https://archive.smashing.media/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/68dd54ca-60cf-4ef7-898b-26d7cbe48ec7/10-dithering-opt.jpg"
+}
 
-     }])
-    }
+const Timer = () => {
+    const[second, setSecond] = useState(0);
 
- 
-  return (
-    <div style={{height:"100vh", background:"#2d3436"}}>
-        <button onClick={addPost}>add post </button>
-       <div style={{ display:"flex",flexDirection: "column", justifyContent:"center",   alignItems: "center"}}>
-                {postComponent}
-       </div>
-    </div>
-  );
+    useEffect(()=>{
+       let clock = setInterval(() => {    // here the setinterval value is placed inside the clock variable
+            console.log("from inside clock- clock is runnning");
+            setSecond(prev => prev +1);
+        }, 1000);
+        //when the inside clock dosen't stops - that is when cleanup function comes into picture
+
+        //cleanup code(function)
+        return function() {
+            clearInterval(clock); // the setinteval clock stops when u call it inside a clearinterval operation
+        }
+
+    },[]);
+
+    return(
+         <div> {second} seconds gone</div>
+    )
+   
+
 }
 
 // Export App Component
