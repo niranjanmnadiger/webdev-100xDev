@@ -1,52 +1,62 @@
 import { useEffect, useState } from "react"
 
-function useDebounce(value,delay){
+const useDebounce = (value , delay) => {
 
-  const[debounceValue, setDebounceValue] = useState(value);
+const [timerr, setTimerr] = useState(value);
 
-
-  useEffect(() => {
-    const timers = setTimeout(() => {  //timer code to start the clock
-      setDebounceValue(value);
-    }, delay);
-
-      return () => { //clean up code to stop the clock
-        clearTimeout(timers);
-        
-      }
+useEffect(()=>{
 
 
-  },[value, delay])
+  const clocks = setTimeout(() => {
 
-  return debounceValue
+    setTimerr(value);
+    
+  }, delay);
+
+  return() => {
+    clearTimeout(clocks);
+  }
   
+  
+
+},[value, delay ])
+
+
+return timerr;
 }
 
-function App() {
 
-  const [inputVal, setInputVal] = useState("");
-  const deboounceValue = useDebounce(inputVal , 200);
 
-  function change(e){
-    setInputVal(e.target.value); //this one line code will put whats inside the input box insider inputVal state variable 
-    //whenever and event takes place in input box - this represents "e", onchange of event "e" , target the event and get the value
-    // this is similar to document.getElementById("").value
+function App(){
+
+  const [inptus, setInputs] = useState("");
+  const debouncedHook = useDebounce(inptus, 200);
+  
+  function servers(e){
+
+   setInputs(e.target.value );
+
   }
 
-  useEffect(() => {
-    //do the expensive operation 
-    //fecth
-    fetch("api.amazon.com")
-    console.log("expensive operation")
+  useEffect(()=>{
 
-  },[deboounceValue])
+    fetch("api.nirus.com");
+    console.log("frontend it hitting the api correctly");
 
-  return (
+
+  },[debouncedHook]);
+
+  
+
+  return(
     <div>
-     <input type="text" onChange={change}/>
+      <input type="text" onChange={servers} />
     </div>
   )
 }
+
+
+
 
 
 export default App
