@@ -1,2 +1,0 @@
-hi there from a.txt file
-good to see you
