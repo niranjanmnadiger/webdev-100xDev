@@ -1,0 +1,26 @@
+{
+  "name": "100xdevs",
+  "version": "1.0.0",
+  "description": "A collection of all my practice code, projects, and concepts explored while learning web development. This repository documents my journey — from foundational topics to advanced concepts — as I build skills across frontend, backend, and full-stack development.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niranjanmnadiger/webdev-100xDev.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/niranjanmnadiger/webdev-100xDev/issues"
+  },
+  "homepage": "https://github.com/niranjanmnadiger/webdev-100xDev#readme",
+  "dependencies": {
+    "axios": "^1.11.0",
+    "express": "^5.1.0",
+    "react": "^19.1.1"
+  }
+}
