@@ -43,7 +43,7 @@ export function Otp() {
                     type="text"
                     inputMode="numeric"   // mobile: show numeric keyboard
                     pattern="[0-9]*"      // extra hint for browsers
-                    className="w-[40px] h-[50px] rounded-xl bg-blue-50 px-3.5 text-center text-black"
+                    className="w-10 h-[50px] rounded-xl bg-blue-50 px-3.5 text-center text-black"
                 />
             ))}
 
