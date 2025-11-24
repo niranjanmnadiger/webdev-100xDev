@@ -1,47 +1,70 @@
-//import { useMemo, useState } from "react";
-import {
-  ThemeProvider,
 
-} from "@mui/material/styles";
-import {
-  CssBaseline,
-  Card,
-  CardContent,
-  CardHeader,
-  Typography,
-  Button,
-  Box,
-} from "@mui/material";
+import { HomeIcon } from "./icons/Home"
+import { SidebarIcon } from "./icons/sidebar"
 
 const App = () => {
-  // //const [mode, setMode] = useState("light");
 
-  // // create theme based on mode
-  // const theme = useMemo(
-  //   () =>
-  //     createTheme({
-  //       palette: {
-  //         mode, // "light" or "dark"
-  //       },
-  //     }),
-  //   [mode]
-  // );
+  return (
+    <div className="flex">
+      <Sidebar />
+      <Content />
 
-  // const toggleMode = () => {
-  //   setMode((prev) => (prev === "light" ? "dark" : "light"));
-  // };
+    </div>
+
+
+
+
+
+  )
+}
+
+function Sidebar() {
 
   return (
 
-    <div>
+    <div className="bg-amber-200 w-60 h-screen">
+      <SidebarIcon />
+
+      <HomeIcon />
 
 
-      <div class="grid grid-cols-2 sm:grid-cols-3">
+
+    </div>
+  )
+}
+
+
+
+
+function Content() {
+
+  return (
+
+    <div className="w-screen h-screen mx-1">
+      <div className="bg-black text-white py-7"> Fight for Your fairytale! </div>
+
+      <div className="bg-blue-100 grid grid-cols-12 gap-3">
+
+        <div className="col-span-2 bg-red-300 py-20 -translate-y-5 ">
+          Image and info
+        </div>
+
+        <div className="col-span-6 bg-amber-400 py-20">
+          meeting shedules
+        </div>
+
+        <div className="col-span-4 bg-blue-500">
+          extras
+        </div>
+
+
 
       </div>
 
-    </div>
-  );
-};
 
-export default App;
+    </div>
+  )
+}
+
+
+export default App
