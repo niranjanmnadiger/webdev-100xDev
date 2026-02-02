@@ -1,13 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-function isLegal(age) {
-    if (age < 18) {
-        return false;
-    }
-    else {
-        return true;
-    }
+function delay(fn) {
+    setTimeout(fn, 3000);
 }
-console.log(isLegal(19));
-console.log(isLegal(17));
+delay(() => {
+    console.log("after 3 seconds");
+});
 //# sourceMappingURL=index.js.map

@@ -1,13 +1,13 @@
-function isLegal(age: number): boolean {
-
-    if (age < 18) {
-        return false;
-    } else {
-        return true;
-    }
-
+function delay(fn: () => void)
+//function delay(fn: any ) --> this will also workout but will lose out the whole idea of TS
+// its better to mention particular types rather than any type 
+{
+    setTimeout(fn, 3000);
 
 }
 
-console.log(isLegal(19));
-console.log(isLegal(17));
+delay(
+    () => {
+        console.log("after 3 seconds")
+    }
+)
