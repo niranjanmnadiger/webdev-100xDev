@@ -17,4 +17,9 @@ function greet(user) {
 }
 greet(user);
 greet(user2);
+greet({
+    names: "niranjan",
+    age: 31,
+    email: "niruss"
+});
 //# sourceMappingURL=object.js.map
