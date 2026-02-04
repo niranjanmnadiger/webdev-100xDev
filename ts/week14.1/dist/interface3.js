@@ -1,4 +1,5 @@
 "use strict";
+//importing interface within another interface!!
 Object.defineProperty(exports, "__esModule", { value: true });
 let user = {
     name: "niranjan",
