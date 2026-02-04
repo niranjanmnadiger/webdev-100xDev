@@ -12,7 +12,7 @@ let user = {
     }
 };
 let user2 = {
-    name: "niranjan",
+    name: "niranjan", //here you can see the address is not added as the address is optional in the interface
     age: 23,
     email: "niranjan@gmail.com"
 };
