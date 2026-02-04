@@ -10,3 +10,8 @@ function isTrue(age: number): boolean {
         return false;
     }
 }
+
+function greet(name: string): string {
+
+    return `hello ${name}`;
+}
