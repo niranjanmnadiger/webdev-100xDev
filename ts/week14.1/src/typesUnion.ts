@@ -1,4 +1,4 @@
-// intersections in types 
+// unions in types 
 
 type Kid = {
 
@@ -14,9 +14,11 @@ type Address = {
     siblings?: number
 }
 
-type School = Kid | Address
+type School = Kid | Address         // | --> this is an union operator 
 
-let newKid: School = { // so this intersections let you take the properties of types - only if in need 
+//union says  - The value must satisfy at least one of the types or interfaces - both the properties if you union two types or interfaces
+
+let newKid: School = { // so this intersections let you take the properties of types - only if in need , mother and father name are skipped here
     name: "niranjan",
     age: 23,
     height: 160,

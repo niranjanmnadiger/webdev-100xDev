@@ -1,4 +1,4 @@
-//union of types 
+//intersections of types 
 
 type Employee = {
     name: string,
@@ -13,7 +13,9 @@ type Manager = {
     workExp?: number        // workExp is optional here - which can be done by adding ? mark
 }
 
-type TeamLead = Employee & Manager;
+type TeamLead = Employee & Manager;         //  & --> this is an intersection operator.
+
+//this basically means - you sholud have everything - both the properties if you intersect two types or interfaces
 
 let e: Employee = {
     name: "niranjan",

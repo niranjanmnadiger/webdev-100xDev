@@ -3,16 +3,15 @@ function maxValue(arr: number[]): number {
         throw new Error("Array cannot be empty");
     }
 
-    let max = arr[0]; // ✅ now TS knows arr[0] exists
+    let max = arr[0]!;
 
     for (let i = 1; i < arr.length; i++) {
-        const current = arr[i]; // current is a number
-        if (current > max) {
-            max = current;
+        if (arr[i]! > max) {
+            max = arr[i]!;
         }
     }
 
     return max;
 }
 
-console.log(maxValue([1, 2, 3]));
+console.log(maxValue([1, 5, 6, 34, 22, 9]));
