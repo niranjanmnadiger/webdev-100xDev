@@ -15,7 +15,7 @@ type Intersection = User & Compnay
 
 let random: Union = { // union must have all the feild of first type and can have some or all the feilds of second type
     name: "niri",
-    // age: 11,
+    age: 11,
     address: "BLR",
     dept: "TEch"
 
