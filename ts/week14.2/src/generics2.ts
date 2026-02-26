@@ -1,4 +1,8 @@
 
+type Input = number | string;
+
+// function firstEle(arr : input[])
+
 function firstElement<T>(arr: T[]) {
 
     return arr[0];// return the fist element 
