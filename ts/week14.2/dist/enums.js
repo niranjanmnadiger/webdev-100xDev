@@ -2,13 +2,17 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var Direction;
 (function (Direction) {
-    Direction[Direction["Up"] = 0] = "Up";
-    Direction[Direction["Down"] = 1] = "Down";
-    Direction[Direction["Left"] = 2] = "Left";
-    Direction[Direction["Right"] = 3] = "Right";
+    Direction["Up"] = "Up";
+    Direction["Down"] = "down";
+    Direction["Right"] = "right";
+    Direction["Left"] = "left";
 })(Direction || (Direction = {}));
-function doSomething(keypressed) {
-    //return "You pressed " + Direction[keypressed];
+function move(keypressed) {
+    if (keypressed == Direction.Up)
+        return `pressed ${Direction.Up}`;
 }
-console.log(doSomething(Direction.Up));
+console.log(move(Direction.Up));
+console.log(move(Direction.Down));
+console.log(move(Direction.Left));
+console.log(move(Direction.Right));
 //# sourceMappingURL=enums.js.map

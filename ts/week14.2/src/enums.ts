@@ -1,12 +1,16 @@
 enum Direction {
-    Up,
-    Down,
-    Left,
-    Right
+    Up = "Up",
+    Down = "down",
+    Right = "right",
+    Left = "left"
+
 }
 
-function doSomething(keypressed: Direction) {
-    return "You pressed " + Direction[keypressed];
+function move(keypressed: Direction) {
+    if (keypressed == Direction.Up) return `pressed ${Direction.Up}`
 }
 
-console.log(doSomething(Direction.Up));
+console.log(move(Direction.Up))
+console.log(move(Direction.Down))
+console.log(move(Direction.Left))
+console.log(move(Direction.Right))
